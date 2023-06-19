@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SoulSpark</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link " href="/">Home</a>
+        <a class="nav-link" href="/Submit">Sumbit Secret</a>
+        <a class="nav-link " href="/Secrets">View Secrets</a>
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Profile</button>
+          <div class="dropdown-content" style="left:0;">
+            <a class="nav-link " href="/yourcontent">Your Content</a>
+            <a class="nav-link " href="/Register">Register</a>
+            <a class="nav-link " href="login">Login</a>
+            <a class="nav-link" href="/logout" role="button">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <!-- Rest of your content -->
+<div class="extra div">
+  
+</div>
+
+<div class="container mt-5 renew">
+  <h1>Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <!-- Makes POST request to /login route -->
+          <form action="/Register" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-dark">Login</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+      
+    </div> 
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SoulSpark</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " href="/">Home</a>
+          <a class="nav-link" href="/Submit">Sumbit Secret</a>
+          <a class="nav-link " href="/Secrets">View Secrets</a>
+          <div class="dropdown" style="float:left;">
+            <button class="dropbtn varun">Profile</button>
+            <div class="dropdown-content" style="left:0;">
+              <a class="nav-link " href="/yourcontent">Your Content</a>
+              <a class="nav-link " href="/Register">Register</a>
+              <a class="nav-link " href="login">Login</a>
+              <a class="nav-link" href="/logout" role="button">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="jumbotron text-center">
+  
+    <h1 class="display-3">Your Quotes Collection!</h1>
+    <div class="secret-container">
+            <% secrets.forEach(function(secret) { %>
+              <div class="secret-style">
+              <p class="secret-text">
+                <%= secret.content %>
+                <form class="individual-secret-item" action="" method="">
+                  <input type="hidden" name="secretId" value="<%= secret._id %>">
+                  <button class="button-class" type="submit"><img class="img-class" src="images/hand-thumbs-up.svg" alt=""></button>
+                </form>
+                <%= secret.likes %>
+                <form class="individual-secret-item" action="" method="">
+                  <input type="hidden" name="secretId" value="<%= secret._id %>">
+                  <button class="button-class" type="submit"><img class="img-class" src="images/hand-thumbs-down.svg" alt=""></button>
+                </form>
+                <%= secret.dislike %>
+                <form class="individual-secret-item" action="" method="">
+                  <input type="hidden" name="secretId" value="<%= secret._id %>">
+                  <button class="button-class" type="submit"><img class="img-class" src="images/fire.svg" alt=""></button>
+                </form>
+                <%= secret.fire %>
+                <form class="individual-secret-item" action="" method="">
+                  <input type="hidden" name="secretId" value="<%= secret._id %>">
+                  <button class="button-class" type="submit"><img class="img-class" src="images/emoji-frown.svg" alt=""></button>
+                </form>
+                <%= secret.sad %>
+              </p>
+            </div>
+            <% }); %>
+        </div>
+    <a class="btn btn-light btn-lg logout-button" href="/logout" role="button">Log Out</a>
+    <a class="btn btn-dark btn-lg " href="/submit" role="button">Submit a Secret</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SoulSpark</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link " href="/">Home</a>
+        <a class="nav-link prashanth" href="/Submit">Sumbit Quote</a>
+        <a class="nav-link " href="/Secrets">View Quote</a>
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Profile</button>
+          <div class="dropdown-content" style="left:0;">
+            <a class="nav-link " href="/yourcontent">Your Content</a>
+            <a class="nav-link " href="/Register">Register</a>
+            <a class="nav-link " href="login">Login</a>
+            <a class="nav-link" href="/logout" role="button">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="jumbotron centered">
+    <img  class="secret-img" src="images/pngwing.com.png" alt="">
+    <h1 class="display-3">Quotes</h1>
+    <p class="secret-text">Submit Your Quote and Inspire Others, share them anonymously!</p>
+
+    <form action="/submit" method="POST">
+
+      <div class="form-group">
+        
+        <input type="text"  maxlength="150" class="form-control text-center" name="secret" placeholder="Share a quote..">
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>
