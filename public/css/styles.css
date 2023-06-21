@@ -31,6 +31,36 @@ body {
   background-color: #E3B448;
   border-radius: 10%;
 }
+.recontainer{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.recontainer .extra-text {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.rebutton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.rebutton:hover {
+  background-color: #555;
+  color: white;
+}
+
 .navbar{
   border: "border border-secondary";
   background-color:#467771;
@@ -243,3 +273,103 @@ form {
 .secret-img{
   height: 100px;
 }
+.home-center{
+  padding-top: 35px;
+}
+.mycontainer{
+  padding-top: 52px;
+}
+@media only screen and (min-width:897px){
+  .jumbotron .container{
+    margin: -17px;
+  }
+  .mysecret-container{
+    padding-top: 0px;
+  }
+  .google-down{
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+ .home-img{
+  width: 100px;
+  height: auto;
+ }
+ .jumbotron{
+  padding-top: 21px;
+  padding-top: 100px;
+  display: contents;
+ }
+ .display-3{
+  font-size:44px ;
+}
+.secret-container .secret-style{
+  width: 94%;
+}
+.secret-container .secret-style .individual-secret-item .button-class{
+  margin-left: 0px;
+}
+.navbar-toggler{
+  width: 84px;
+  display: flex;
+  align-items: center;
+}
+.container{
+  position: relative;
+}
+.jumbotron .secret-img{
+  margin-top: 61px;
+    margin-left: 40%;
+}
+.steve{
+  margin-top: 64px;
+}
+} 
+@media only screen and (min-width: 801px) and (max-width:986px){
+  .container{
+    position: relative;;
+  }
+  .jumbotron{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 100px;
+  }
+  .jumbotron .secret-container .secret-style{
+    width: 45%;
+  }
+  .navbar-toggler{
+    width: 84px;
+    display: flex;
+    align-items: center;
+  }
+  .steve{
+    margin-top: 64px;
+  }
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.get-started-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: #afb7c0;
+  color: rgb(110, 65, 65);
+}
+.container-home{
+  padding-top: 20px;
+}
+
+

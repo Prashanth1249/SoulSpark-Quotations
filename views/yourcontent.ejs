@@ -3,13 +3,13 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">SoulSpark</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon">Menu</span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link " href="/">Home</a>
-          <a class="nav-link" href="/Submit">Sumbit Secret</a>
-          <a class="nav-link " href="/Secrets">View Secrets</a>
+          <a class="nav-link" href="/Submit">Submit Quote</a>
+          <a class="nav-link " href="/Secrets">View Quotes</a>
           <div class="dropdown" style="float:left;">
             <button class="dropbtn varun">Profile</button>
             <div class="dropdown-content" style="left:0;">
@@ -19,6 +19,7 @@
               <a class="nav-link" href="/logout" role="button">Log Out</a>
             </div>
           </div>
+          <a class="nav-link" href="mailto:prashanth.pottola@gmail.com" role="button">Contact</a>
         </div>
       </div>
     </div>
@@ -26,7 +27,7 @@
 
 <div class="jumbotron text-center">
   
-    <h1 class="display-3">Your Quotes Collection!</h1>
+    <h1 class="display-3 steve">Your Quotes Collection!</h1>
     <div class="secret-container">
             <% secrets.forEach(function(secret) { %>
               <div class="secret-style">

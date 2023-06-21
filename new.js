@@ -13,7 +13,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require('mongoose-findorcreate');
 const { compareSync } = require('bcrypt');
-
+require("dotenv").config();
 
 // const encrypt = require('mongoose-encryption');
 // const md5=require("md5");
@@ -38,8 +38,8 @@ app.use(session({
   }))
 app.use(passport.initialize());
 app.use(passport.session());
-console.log(process.env.MONGODB_PASSWORD);
-const dburl="mongodb+srv://"+process.env.MONGODB_USERNAME+":"+process.env.MONGODB_PASSWORD+"@cluster0.6ioio77.mongodb.net/LoginData?retryWrites=true&w=majority";
+ 
+const dburl="mongodb+srv://Prashanth:@cluster0.6ioio77.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(dburl, {useNewUrlParser: true})
 .then(() => {
     console.log('Connected to MongoDB Atlas');
@@ -66,7 +66,7 @@ const UserSchema=new mongoose.Schema({
 
 UserSchema.plugin(passportLocalMongoose);
 UserSchema.plugin(findOrCreate);
-// UserSchema.plugin(encrypt,{secret:process.env.SECRET,encryptedFields:["password"] });
+// UserSchema.plugin(encrypt,{secret:"STEVESMITH49LAKDFKKKK",encryptedFields:["password"] });
 const User=new mongoose.model("User",UserSchema);
 
 passport.use(User.createStrategy());
@@ -82,16 +82,19 @@ passport.serializeUser(function(user, done) {
 
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/Secret"
+    clientID: "424562353250-arlrgf9npebninuvpcpku9o618oqfr6l.apps.googleusercontent.com",
+    clientSecret: "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",
+    callbackURL: "https://quote-soulspark.onrender.com/auth/google/Secret"
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    User.findOrCreate({ googleId: profile.id 
+                      }, function (err, user) {
+        console.log("here we are");
       return cb(err, user);
     });
-  }
+  },
+console.log("success wth stragerh")
 ));
 
 
@@ -100,11 +103,8 @@ app.get("/",function(req,res){
     res.render("home");
 });
 
-app.get("/auth/google",
-  passport.authenticate("google", { scope: ["profile"] }));
-
-  app.get("/auth/google/Secret", 
-  passport.authenticate("google", { failureRedirect: "/login" }),
+app.get("/auth/google",passport.authenticate("google", { scope: ["profile"] }));
+app.get("/auth/google/Secret", passport.authenticate("google", { failureRedirect: "/login" }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect("/secrets");
