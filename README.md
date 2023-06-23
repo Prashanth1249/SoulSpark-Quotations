@@ -2,7 +2,8 @@
 SoulSpark Quotations is a web application that allows users to anonymously share their favorite quotes and engage in meaningful discussions. This project combines a secure backend built with Node.js, Express.js, and MongoDB, and a dynamic frontend created using HTML, CSS, JavaScript, and EJS templating.
 
 ## Features
-User Registration and Authentication: Users can create an account and log in securely. Passwords are hashed and salted for enhanced security.
+### User Registration and Authentication 
+Users can create an account and log in securely. Passwords are hashed and salted for enhanced security.
 
 ### Quote Sharing
 Registered users can share their favorite quotes anonymously. Each quote includes the author's name and the option for other users to provide feedback.
@@ -15,7 +16,6 @@ Users can express their response to quotes using options such as "like," "fire,"
 
 
 ## Installation
-
 To run SoulSpark Quotations locally, follow these steps:
 
 ### Clone the repository:
