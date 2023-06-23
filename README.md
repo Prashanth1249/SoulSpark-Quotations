@@ -15,9 +15,11 @@ Users can express their response to quotes using options such as "like," "fire,"
 
 
 ## Installation
+
 To run SoulSpark Quotations locally, follow these steps:
 
-### Clone the repository
+### Clone the repository:
+
 git clone https://github.com/Prashanth1249/SoulSpark-Quotations.git
 
 ### Navigate to the project directory:
@@ -30,7 +32,7 @@ npm install
 Create a .env file based on the .env.example file.
 
 ### Start the application:
-npm start
+node app.js
 
 
 
